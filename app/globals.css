@@ -1,26 +1,153 @@
-@import "tailwindcss";
-
+/* app/globals.css */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --c-bg: hsl(0, 0%, 90%);
+  --pad: max(20px, 4vmin);
+  --fs-text: 12px;
+  --c-text: hsl(0, 0%, 10%);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.body-light {
+  background-color: var(--c-bg);
+  color: hsl(0, 0%, 10%);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.body-dark {
+  background-color: hsl(0, 0%, 5%);
+  color: hsl(0, 0%, 95%);
 }
 
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overscroll-behavior: none;
+  font-family: var(--font-cairo), sans-serif;
+}
+
+h1,
+p {
+  margin: 0;
+  color: #fff;
+  /* بسبب mix-blend-mode سيظهر بشكل مختلف */
+}
+
+/* Masks */
+/* 1. الخصائص المشتركة لجميع الـ masks */
+.mask_top,
+.mask_bottom,
+.mask_right,
+.mask_left {
+  position: fixed;
+  background-color: var(--c-bg);
+  z-index: 5;
+  transition: background-color 0.9s cubic-bezier(0.1, 0.4, 0.2, 1);
+  opacity: 0.9;
+}
+
+/* 2. الـ masks الأفقية (أعلى وأسفل) */
+.mask_top,
+.mask_bottom {
+  left: 0;
+  width: 100%;
+  height: var(--pad);
+}
+
+/* 3. الـ masks العمودية (يمين ويسار) */
+.mask_right,
+.mask_left {
+  top: 0;
+  height: 100%;
+  width: var(--pad);
+}
+
+/* 4. تحديد المواقع بدقة */
+.mask_top {
+  top: 0;
+}
+
+.mask_bottom {
+  bottom: 0;
+}
+
+.mask_left {
+  left: 0;
+}
+
+.mask_right {
+  right: 0;
+  /* هنا قمنا بإزالة الـ left: 0 الذي كان موروثاً في الكود القديم */
+}
+
+/* Frame */
+.frame {
+  position: fixed;
+  z-index: 10;
+  inset: var(--pad);
+  mix-blend-mode: difference;
+  pointer-events: none;
+}
+
+.frame_line {
+  position: absolute;
+  background-color: #fff;
+  opacity: 0.5;
+}
+
+.frame_line-left {
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+}
+
+.frame_line-right {
+  right: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+}
+
+.frame_line-top {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+}
+
+.frame_line-bottom {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+}
+
+/* Header */
+.siteHeader {
+  position: fixed;
+  z-index: 10;
+  left: calc(var(--pad) * 2);
+  top: calc(var(--pad) * 2);
+  mix-blend-mode: difference;
+}
+
+.siteHeader_title {
+  font-size: 30px;
+  font-weight: 200;
+  line-height: 1;
+}
+
+.siteHeader_label {
+  font-weight: 300;
+  font-size: 14px;
+}
+
+/* Canvas background for Three.js */
+#canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }

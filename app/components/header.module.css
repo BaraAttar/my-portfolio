@@ -1,0 +1,85 @@
+/* Header */
+.header {
+    /* width: 70%; */
+    position: fixed;
+    z-index: 5;
+    left: calc(var(--pad) * 2);
+    top: calc(var(--pad) * 2);
+    mix-blend-mode: difference;
+
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: 1.2rem;
+    padding: 20px;
+}
+
+.siteHeader_title {
+    font-size: 30px;
+    font-weight: 200;
+    line-height: 1;
+    margin: 0;
+    backdrop-filter: blur(10px);
+}
+
+.siteHeader_label {
+    font-weight: 200;
+    font-size: 12px;
+    margin: 5px 0 0 0;
+}
+
+.siteHeader_nav {
+    margin-top: 30px;
+}
+
+.siteHeader_nav ol {
+    list-style: none;
+    /* Removes default numbers */
+    padding: 0;
+    margin: 0;
+}
+
+.siteHeader_nav ol li {
+    font-size: 12px;
+    /* Added 'px' */
+    font-weight: 700;
+    text-decoration: none;
+    /* text-transform: uppercase; */
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    position: relative;
+    transition: opacity 0.3s ease;
+    transition: all 0.1s ease-in-out;
+}
+
+.siteHeader_nav ol li:hover {
+    opacity: 0.8;
+    transform: translateX(5px)
+}
+
+/* The Active Dot Indicator */
+.active::before {
+    content: "•";
+    color: #fff;
+    /* Bullet character */
+    position: absolute;
+    left: -15px;
+    /* Adjust based on preference */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+}
+
+.link {
+    font-size: 12px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    line-height: 1.5;
+    display: block;
+    width: 100%;
+    /* يحول الرابط من عنصر نصي إلى صندوق */
+    /* padding: 4;
+    padding-right: 100px; */
+    /* background-color: aqua; */
+}

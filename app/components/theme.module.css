@@ -1,0 +1,56 @@
+.theme {
+    position: fixed;
+    z-index: 100;
+    left: calc(var(--pad) - .15em);
+    bottom: var(--pad);
+    transform-origin: left bottom;
+    transform: rotate(-90deg);
+    white-space: nowrap;
+    display: flex;
+    column-gap: 15px;
+    cursor: pointer;
+    mix-blend-mode: difference;
+
+}
+
+.theme_colors {
+    display: flex;
+    column-gap: 15px;
+    color: #fff;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.theme_label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.theme_checkbox {
+    width: 6px;
+    height: 6px;
+    border: 1px solid currentColor;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* transition: background 0.3s ease; */
+}
+
+.theme_checkbox.active {
+    background: currentColor;
+}
+
+.active:before {
+    content: "";
+}
+
+.theme_input {
+    display: none;
+    -webkit-appearance: none;
+    appearance: none;
+}

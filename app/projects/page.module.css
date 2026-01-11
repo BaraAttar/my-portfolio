@@ -1,0 +1,207 @@
+/* الحاوية الرئيسية للصفحة */
+.projects_page {
+    position: absolute;
+    left: 20%;
+    top: 40%;
+    width: 70%;
+    height: 100%;
+    mix-blend-mode: difference;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    display: flex;
+}
+
+/* تحسين شكل شريط التمرير (اختياري) */
+.projects_page::-webkit-scrollbar {
+    width: 6px;
+}
+
+.projects_page::-webkit-scrollbar-thumb {
+    background-color: rgba(128, 128, 128);
+    border-radius: 4px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    padding-bottom: 4rem;
+    /* مساحة إضافية في الأسفل لضمان عدم اختفاء المحتوى */
+}
+
+.project_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+/* --- Header --- */
+.header {
+    display: flex;
+    flex-direction: column;
+    border-left: 3px solid currentColor;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+
+}
+
+.title {
+    font-family: var(--font-neue), sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0;
+    letter-spacing: -0.03em;
+    word-break: break-word;
+    color: #ffffff;
+    /* يمنع خروج الكلمة الطويلة عن الشاشة */
+}
+
+.subtitle {
+    font-family: var(--font-neue), sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    /* opacity: 0.6; */
+    margin-top: 0.5rem;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+
+}
+
+/* --- Grid Layout --- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    border-top: 1px solid rgba(255, 255, 255);
+    padding-top: 2rem;
+}
+
+/* --- Card Styles --- */
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    min-width: 0;
+}
+
+/* --- (جديد) تنسيق رابط الجزء الفرعي --- */
+.part_link {
+    text-decoration: none;
+    color: inherit;
+    width: fit-content;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    color: #ffffff;
+
+}
+
+.part_link:hover {
+    opacity: 0.7;
+}
+
+.card_title {
+    font-family: var(--font-neue), sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin: 0;
+    text-transform: uppercase;
+
+    /* محاذاة النص مع السهم */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.card_desc {
+    font-family: var(--font-neue), sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    /* opacity: 0.7; */
+    margin: 0;
+
+    /* أهم خاصية لمنع قص النص */
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+/* --- (جديد) أيقونة السهم للأجزاء الفرعية --- */
+.card_icon {
+    font-size: 1rem;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* تحريك السهم عند مرور الماوس على العنوان */
+.part_link:hover .card_icon {
+    transform: translate(3px, -3px);
+}
+
+
+/* --- Tags Fix --- */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    /* هذا يحل مشكلة خروج التاغز عن الشاشة */
+    gap: 0.5rem;
+    margin-top: auto;
+    color: #ffffff;
+
+}
+
+
+.tag {
+    font-size: 0.7rem;
+    font-family: monospace;
+    padding: 3px 8px;
+    border: 1px solid rgb(255, 255, 255);
+
+    border-radius: 4px;
+    /* opacity: 0.8; */
+    white-space: nowrap;
+    /* التاغ نفسه لا ينكسر، بل ينزل للسطر التالي */
+}
+
+
+/* --- Mobile Optimization --- */
+@media (max-width: 768px) {
+    .projects_page {
+        left: 0;
+        right: 0;
+        top: 25%;
+        width: 80%;
+        height: 150%;
+        padding-top: 30%;
+        padding-left: 2.5rem;
+        display: block;
+    }
+
+    .project_wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+
+    .title {
+        font-size: 2.2rem;
+        /* تصغير الخط قليلاً ليتناسب مع عرض الجوال */
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .card {
+        padding-bottom: 1.5rem;
+        border-bottom: 1px dashed rgb(255, 255, 255);
+    }
+
+    .card:last-child {
+        border-bottom: none;
+    }
+}

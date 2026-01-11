@@ -1,0 +1,111 @@
+.contact_page {
+    position: absolute;
+    left: 30%;
+    top: 40%;
+    height: 100%;
+    mix-blend-mode: difference;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    display: flex;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+.subtitle {
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+.email_link {
+    font-size: 4vw;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    line-height: 1.2;
+}
+
+.email_link:hover {
+    opacity: 0.8;
+    border-bottom: 2px solid currentColor;
+}
+
+/* قسم الروابط السفلي */
+.footer_grid {
+    margin-top: 4rem;
+    display: flex;
+    gap: 4rem;
+}
+
+.social_group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: white;
+
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.link {
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: white;
+    transition: opacity 0.2s;
+}
+
+.link:hover {
+    opacity: 0.6;
+}
+
+.plain_text {
+    font-size: 1rem;
+    color: white;
+}
+
+/* --- Mobile --- */
+@media (max-width: 768px) {
+    .contact_page {
+        left: 0;
+        right: 0;
+        top: 25%;
+        width: 80%;
+        height: 150%;
+        padding-top: 30%;
+        padding-left: 2.5rem;
+        display: block;
+    }
+
+    .email_link {
+        font-size: 1.5rem;
+        /* تصغير الخط في الجوال */
+        word-break: break-all;
+        /* لضمان عدم خروجه عن الشاشة */
+    }
+
+    .footer_grid {
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+}

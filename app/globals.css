@@ -43,7 +43,8 @@ p {
 /* Lens for smooth scroll */
 html.lenis,
 html.lenis body {
-  height: auto;
+  /* height: auto; */
+  height: '100dvh';
 }
 
 .lenis.lenis-smooth {
@@ -130,6 +131,7 @@ html.lenis body {
   top: 0;
   width: 1px;
   height: 100%;
+
 }
 
 .frame_line-right {
@@ -137,6 +139,7 @@ html.lenis body {
   top: 0;
   width: 1px;
   height: 100%;
+
 }
 
 .frame_line-top {
@@ -160,7 +163,9 @@ html.lenis body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
+  height: '100dvh';
+
   z-index: 1;
 }
 

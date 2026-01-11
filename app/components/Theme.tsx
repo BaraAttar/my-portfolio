@@ -1,20 +1,23 @@
 "use client";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useEffectEvent, useState } from 'react';
 import styles from './theme.module.css';
 
 export default function Theme() {
     // Initialize without accessing localStorage directly to avoid hydration mismatch
     // We will sync in useEffect
-    const [theme, setTheme] = useState<'light' | 'dark'>('light');
+    const [theme, setTheme] = useState<'light' | 'dark'>('dark');
 
-    useEffect(() => {
-        // Safe client-side initialization
+    const themeInit = useEffectEvent(() => {
         const storedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
         if (storedTheme) {
             if (storedTheme !== theme) setTheme(storedTheme);
         } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
             if (theme !== 'dark') setTheme('dark');
         }
+    })
+
+    useEffect(() => {
+        themeInit()
     }, []);
 
     useEffect(() => {

@@ -69,7 +69,7 @@ export default function RootLayout({
   return (
     <html lang="en">
 
-      <body className={`${cairo.variable} ${neueMontreal.variable} body-light`}>
+      <body className={`${cairo.variable} ${neueMontreal.variable} body-dark`}>
         {/* <main> */}
 
         {/* تفعيل السكرول الناعم */}

@@ -2,12 +2,9 @@
     position: absolute;
     right: calc(var(--pad) * 2);
     bottom: calc(var(--pad) * 2);
-
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    /* white-space: nowrap; */
-
 }
 
 .home_aboutme {
@@ -15,18 +12,6 @@
     padding: 20px;
     border-radius: 10px;
     z-index: 100;
-    /* 
-    background-color: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-
-    border: 1px solid rgba(255, 255, 255, 0.2);
-
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-
-     */
-
     -webkit-backdrop-filter: blur(1rem);
     backdrop-filter: blur(1rem);
     border-radius: 1.2rem;

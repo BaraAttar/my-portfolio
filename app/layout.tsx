@@ -7,7 +7,6 @@ import Theme from "./components/Theme";
 import localFont from 'next/font/local';
 import SmoothScroll from "./components/SmoothScroll";
 
-
 const cairo = Cairo({
   subsets: ['latin', 'arabic'],
   weight: ['200', '300', '400', '600', '700', '1000'],
@@ -68,10 +67,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-
       <body className={`${cairo.variable} ${neueMontreal.variable} body-dark`}>
         {/* <main> */}
-
         {/* تفعيل السكرول الناعم */}
         <SmoothScroll />
 

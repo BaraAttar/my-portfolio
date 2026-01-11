@@ -1,19 +1,18 @@
 /* الحاوية الرئيسية للصفحة */
 .projects_page {
     position: absolute;
+    height: 200%;
     left: 20%;
-    top: 40%;
+    right: 0;
+    top: 0;
     width: 70%;
-    height: 100%;
-    mix-blend-mode: difference;
-    overflow-y: scroll;
-    overflow-x: scroll;
-    display: flex;
+    padding-top: 40vh;
+    overflow: scroll;
 }
 
 /* تحسين شكل شريط التمرير (اختياري) */
 .projects_page::-webkit-scrollbar {
-    width: 6px;
+    width: 0px;
 }
 
 .projects_page::-webkit-scrollbar-thumb {
@@ -23,9 +22,7 @@
 
 .container {
     width: 100%;
-    max-width: 1100px;
-    padding-bottom: 4rem;
-    /* مساحة إضافية في الأسفل لضمان عدم اختفاء المحتوى */
+    height: 150%;
 }
 
 .project_wrapper {
@@ -41,7 +38,6 @@
     border-left: 3px solid currentColor;
     padding-left: 1rem;
     margin-bottom: 1rem;
-    color: #ffffff;
 
 }
 
@@ -53,8 +49,6 @@
     margin: 0;
     letter-spacing: -0.03em;
     word-break: break-word;
-    color: #ffffff;
-    /* يمنع خروج الكلمة الطويلة عن الشاشة */
 }
 
 .subtitle {
@@ -64,8 +58,6 @@
     /* opacity: 0.6; */
     margin-top: 0.5rem;
     letter-spacing: 0.05em;
-    color: #ffffff;
-
 }
 
 /* --- Grid Layout --- */
@@ -73,7 +65,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    border-top: 1px solid rgba(255, 255, 255);
+    border-top: 1px solid rgb(136, 136, 136);
     padding-top: 2rem;
 }
 
@@ -92,8 +84,6 @@
     width: fit-content;
     cursor: pointer;
     transition: opacity 0.2s ease;
-    color: #ffffff;
-
 }
 
 .part_link:hover {
@@ -145,8 +135,6 @@
     /* هذا يحل مشكلة خروج التاغز عن الشاشة */
     gap: 0.5rem;
     margin-top: auto;
-    color: #ffffff;
-
 }
 
 
@@ -154,7 +142,7 @@
     font-size: 0.7rem;
     font-family: monospace;
     padding: 3px 8px;
-    border: 1px solid rgb(255, 255, 255);
+    border: 1px solid rgb(136, 136, 136);
 
     border-radius: 4px;
     /* opacity: 0.8; */
@@ -168,12 +156,13 @@
     .projects_page {
         left: 0;
         right: 0;
-        top: 25%;
+        top: 0;
         width: 80%;
-        height: 150%;
-        padding-top: 30%;
+        padding-top: 80%;
+        padding-bottom: 80%;
         padding-left: 2.5rem;
         display: block;
+        overflow: scroll;
     }
 
     .project_wrapper {

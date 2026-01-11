@@ -5,16 +5,14 @@ import Lenis from 'lenis';
 
 export default function SmoothScroll() {
     useEffect(() => {
-        // 1. إعداد Lenis
         const lenis = new Lenis({
-            duration: 1,   // مدة السكرول (بالثواني)
-            lerp: 0.1,       // قوة التخفيف (0.1 تعني سلاسة عالية)
-            wheelMultiplier: 1, // سرعة السكرول
-            gestureOrientation: 'vertical', // اتجاه السكرول
-            smoothWheel: true,
+            duration: 1.2,
+            lerp: 0.1,
+            wheelMultiplier: 1,
+            touchMultiplier: 2, // زيادة الحساسية للمس في الجوال
+            infinite: false,
         });
 
-        // 2. ربط الـ RequestAnimationFrame بـ Lenis
         function raf(time: number) {
             lenis.raf(time);
             requestAnimationFrame(raf);
@@ -22,11 +20,17 @@ export default function SmoothScroll() {
 
         requestAnimationFrame(raf);
 
-        // 3. تنظيف (Cleanup) عند إغلاق المكون
+        // لتصحيح المشاكل في سفاري عند تغيير حجم النافذة أو تدوير الهاتف
+        const resizeObserver = new ResizeObserver(() => {
+            lenis.resize();
+        });
+        resizeObserver.observe(document.body);
+
         return () => {
             lenis.destroy();
+            resizeObserver.disconnect();
         };
     }, []);
 
-    return null; // المكون لا يحتاج لرسم أي شيء على الشاشة
+    return null;
 }

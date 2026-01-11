@@ -1,14 +1,11 @@
 /* Header */
 .header {
-    /* width: 70%; */
     position: fixed;
-    z-index: 5;
+    z-index: 20;
     left: calc(var(--pad) * 2);
     top: calc(var(--pad) * 2);
-    mix-blend-mode: difference;
-
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     border-radius: 1.2rem;
     padding: 20px;
 }
@@ -60,7 +57,6 @@
 /* The Active Dot Indicator */
 .active::before {
     content: "•";
-    color: #fff;
     /* Bullet character */
     position: absolute;
     left: -15px;
@@ -72,14 +68,9 @@
 
 .link {
     font-size: 12px;
-    color: #fff;
     text-decoration: none;
     font-weight: 500;
     line-height: 1.5;
     display: block;
     width: 100%;
-    /* يحول الرابط من عنصر نصي إلى صندوق */
-    /* padding: 4;
-    padding-right: 100px; */
-    /* background-color: aqua; */
 }

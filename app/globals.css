@@ -12,9 +12,17 @@
   color: hsl(0, 0%, 10%);
 }
 
+.body-light a {
+  color: hsl(0, 0%, 0%);
+}
+
 .body-dark {
   --c-bg: hsl(0, 0%, 5%);
   background-color: var(--c-bg);
+  color: hsl(0, 0%, 95%);
+}
+
+.body-dark a {
   color: hsl(0, 0%, 95%);
 }
 
@@ -29,22 +37,24 @@ body {
   margin: 0;
   padding: 0;
   overscroll-behavior: none;
+  height: 100dvh;
+  /* طول الشاشة بالكامل */
+  overflow: hidden;
   /* font-family: var(--font-cairo), sans-serif; */
   font-family: var(--font-neue), monospace;
 
-}
-
-h1,
-p {
-  margin: 0;
-  color: #fff;
 }
 
 /* Lens for smooth scroll */
 html.lenis,
 html.lenis body {
   /* height: auto; */
-  height: '100dvh';
+  height: 100dvh;
+}
+
+html.lenis {
+  height: auto;
+  /* ضروري جداً ليعمل في الجوال */
 }
 
 .lenis.lenis-smooth {
@@ -130,7 +140,7 @@ html.lenis body {
   left: 0;
   top: 0;
   width: 1px;
-  height: 100%;
+  height: 100dvh;
 
 }
 
@@ -138,7 +148,7 @@ html.lenis body {
   right: 0;
   top: 0;
   width: 1px;
-  height: 100%;
+  height: 100dvh;
 
 }
 
@@ -163,42 +173,8 @@ html.lenis body {
   top: 0;
   left: 0;
   width: 100%;
-  /* height: 100%; */
-  height: '100dvh';
-
   z-index: 1;
 }
-
-/* .content {
-  position: absolute;
-  z-index: 100;
-} */
-
-
-
-/* .content {
-  left: calc(var(--pad, 20px) * 2);
-  top: calc(var(--pad, 20px) * 2);
-  display: flex;
-  width: 100%;
-  height: 100%;
-} */
-
-/* .content {
-  position: fixed;
-  z-index: 10;
-  left: calc(var(--pad, 20px) * 2);
-  top: calc(var(--pad, 20px) * 2);
-  mix-blend-mode: difference;
-  color: white;
-
-  display: flex;
-  width: 100%;
-  height: 100%;
-
-} */
-
-
 
 /* Main */
 main {}

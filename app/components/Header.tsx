@@ -2,7 +2,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import styles from './header.module.css';
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
     const pathname = usePathname();
@@ -12,7 +12,7 @@ export default function Header() {
     const navItems = useMemo(() => [
         { href: 'me', text: 'Home' },
         { href: 'projects', text: 'Projects' },
-        { href: 'info', text: 'Info' },
+        // { href: 'info', text: 'Info' },
         { href: 'contact', text: 'Contact' },
     ], []);
 
